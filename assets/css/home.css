@@ -1,0 +1,30 @@
+/* StarkForgeX home page */
+/* Layout: one screen. Logo, one line of purpose, two doors: courses and demo LMS. */
+:root{--bg:#F3F5FA;--surface:#FFFFFF;--line:#DDE2EC;--ink:#0A1330;--ink-2:#465069;--ink-3:#737C94;--brand:#0B47E0;--navy:#0A1330;--orange:#D9600B;
+  --f-head:"Poppins","Segoe UI",system-ui,sans-serif;--f-body:"Inter","Segoe UI",system-ui,sans-serif;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1020;--surface:#121A2D;--line:#252F48;--ink:#E7EBF5;--ink-2:#A8B1C8;--ink-3:#7E88A2;--brand:#6B92FF;--orange:#FF8A3D;color-scheme:dark}}
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);line-height:1.6;-webkit-font-smoothing:antialiased;display:flex;flex-direction:column;min-height:100vh}
+.wrap{width:100%;max-width:980px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{background:var(--navy);color:#fff}
+header .wrap{padding-block:40px 44px;display:grid;gap:18px}
+.logo{background:#fff;border-radius:12px;padding:12px 18px;justify-self:start}
+.logo img{display:block;width:200px;height:auto}
+h1{font-family:var(--f-head);font-weight:600;font-size:32px;line-height:1.25;margin:0;max-width:20em;text-wrap:balance}
+header p{margin:0;color:#C3CADC;font-size:16.5px;max-width:38em}
+main{flex:1}
+.doors{display:grid;grid-template-columns:1fr 1fr;gap:18px;padding-block:32px}
+.door{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;text-decoration:none;color:inherit;display:grid;gap:10px;transition:border-color .15s,transform .15s}
+.door:hover{border-color:var(--brand);transform:translateY(-2px)}
+.door .label{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--orange)}
+.door h2{font-family:var(--f-head);font-weight:600;font-size:21px;margin:0}
+.door p{margin:0;color:var(--ink-2);font-size:15px}
+.door ul{margin:4px 0 0;padding-left:18px;color:var(--ink-2);font-size:14.5px;display:grid;gap:2px}
+.door .go{margin-top:6px;font-weight:600;color:var(--brand);display:flex;align-items:center;gap:6px}
+footer{padding-block:20px 32px;color:var(--ink-3);font-size:13.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+footer a{color:var(--ink-2)}
+@media (max-width:680px){.doors{grid-template-columns:1fr}h1{font-size:25px}header .wrap{padding-block:28px 32px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
